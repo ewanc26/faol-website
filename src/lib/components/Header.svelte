@@ -11,7 +11,17 @@
 </script>
 
 <header class="site-header">
-	<a href="/" class="site-name">faol</a>
+	<a href="/" class="site-name" aria-label="Home">
+		<svg class="wolf-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+			<path d="M5 2L2 10L4 14L7 18L10 20L12 21L14 20L17 18L20 14L22 10L19 2" />
+			<path d="M5 5L4 10" />
+			<path d="M19 5L20 10" />
+			<path d="M8.5 12.5H10.5" />
+			<path d="M13.5 12.5H15.5" />
+			<path d="M10.5 16L12 17.5L13.5 16" />
+		</svg>
+		faol
+	</a>
 	<nav>
 		{#each links as link}
 			<a
@@ -37,11 +47,18 @@
 	}
 
 	.site-name {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.4rem;
 		font-size: 1rem;
 		font-weight: 600;
 		color: var(--color-text);
 		letter-spacing: -0.02em;
 		text-decoration: none;
+	}
+
+	.wolf-icon {
+		flex-shrink: 0;
 	}
 
 	.site-name:hover {

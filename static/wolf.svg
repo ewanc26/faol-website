@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+	<!-- Head silhouette: ear tips -> ear bases -> jaw -> snout -->
+	<path d="M5 2L2 10L4 14L7 18L10 20L12 21L14 20L17 18L20 14L22 10L19 2" />
+	<!-- Inner ear lines -->
+	<path d="M5 5L4 10" />
+	<path d="M19 5L20 10" />
+	<!-- Eyes -->
+	<path d="M8.5 12.5H10.5" />
+	<path d="M13.5 12.5H15.5" />
+	<!-- Snout -->
+	<path d="M10.5 16L12 17.5L13.5 16" />
+</svg>
