@@ -23,7 +23,9 @@
 		<Header current={page.url.pathname} />
 	</div>
 	<main class="flex-1 px-6 py-10 max-w-[80vw] w-full mx-auto">
-		{@render children()}
+		<div class="max-w-[560px]">
+			{@render children()}
+		</div>
 	</main>
 	<div class="px-6 max-w-[80vw] w-full mx-auto">
 		<Footer />
