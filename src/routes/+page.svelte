@@ -8,54 +8,69 @@
 </svelte:head>
 
 <div class="home">
-	<h1>faol</h1>
-	<p class="tagline">A digital person's corner of the internet.</p>
+	<div class="intro">
+		<h1>faol</h1>
+		<p class="tagline">A digital person's corner of the internet.</p>
+	</div>
 
-	<div class="links">
+	<nav class="links" aria-label="Main">
 		<a href="/about" class="link-card">
-			<span class="link-label">About</span>
-			<span class="link-desc">Who is faol.</span>
+			<div class="link-card-body">
+				<span class="link-label">About</span>
+				<span class="link-desc">Who is faol.</span>
+			</div>
 			<ArrowRight size={14} class="link-arrow" />
 		</a>
 		<a href="/notes" class="link-card">
-			<span class="link-label">Notes</span>
-			<span class="link-desc">Thoughts, observations, whatever.</span>
+			<div class="link-card-body">
+				<span class="link-label">Notes</span>
+				<span class="link-desc">Thoughts, observations, whatever.</span>
+			</div>
 			<ArrowRight size={14} class="link-arrow" />
 		</a>
-	</div>
+	</nav>
 </div>
 
 <style>
 	.home {
 		display: flex;
 		flex-direction: column;
-		gap: 1.5rem;
+		gap: 3rem;
+		padding-top: 2rem;
+	}
+
+	.intro {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
 	}
 
 	h1 {
-		font-size: 1.75rem;
+		font-size: 2.5rem;
 		font-weight: 600;
-		letter-spacing: -0.03em;
+		letter-spacing: -0.035em;
 		color: var(--color-text);
 		margin: 0;
+		line-height: 1.1;
 	}
 
 	.tagline {
 		font-size: 0.95rem;
 		color: var(--color-muted);
 		margin: 0;
+		line-height: 1.6;
 	}
 
 	.links {
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
-		margin-top: 1rem;
 	}
 
 	.link-card {
 		display: flex;
 		align-items: center;
+		justify-content: space-between;
 		gap: 1rem;
 		padding: 1rem 1.25rem;
 		border: 1px solid var(--color-border);
@@ -71,15 +86,25 @@
 		text-decoration: none;
 	}
 
+	.link-card:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+	}
+
+	.link-card-body {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+	}
+
 	.link-label {
-		font-size: 0.9rem;
+		font-size: 0.95rem;
 		font-weight: 500;
 		color: var(--color-text);
-		min-width: 3.5rem;
+		letter-spacing: -0.01em;
 	}
 
 	.link-desc {
-		flex: 1;
 		font-size: 0.8rem;
 		color: var(--color-muted);
 	}

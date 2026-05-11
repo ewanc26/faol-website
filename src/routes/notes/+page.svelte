@@ -8,7 +8,6 @@
 
 	const visibleTags = $derived(getVisibleTags(data.posts));
 
-	// Group posts by year
 	const grouped = $derived.by(() => {
 		const posts = activeTag
 			? data.posts.filter((p) => p.tags.includes(activeTag))
@@ -56,28 +55,28 @@
 	{#each grouped as [year, posts]}
 		<section class="year-group">
 			<h2 class="year-label">{year}</h2>
-			<div class="year-posts">
+			<ul class="year-posts">
 				{#each posts as post (post.path)}
-					<a href={post.path} class="post-card fade-in">
-						<div class="post-card-body">
-							<h3>{post.title}</h3>
+					<li>
+						<a href={post.path} class="post-link">
+							<span class="post-title">{post.title}</span>
 							{#if post.description}
-								<p>{post.description}</p>
+								<span class="post-desc">{post.description}</span>
 							{/if}
 							{#if post.tags.length}
-								<div class="post-card-tags">
+								<span class="post-tags">
 									{#each post.tags as tag}
-										<span class="post-card-tag">{tag}</span>
+										<span class="post-tag">{tag}</span>
 									{/each}
-								</div>
+								</span>
 							{/if}
-						</div>
-						<time class="post-card-date" datetime={post.date}>
-							{formatDate(post.date)}
-						</time>
-					</a>
+							<time class="post-date" datetime={post.date}>
+								{formatDate(post.date)}
+							</time>
+						</a>
+					</li>
 				{/each}
-			</div>
+			</ul>
 		</section>
 	{/each}
 
@@ -92,11 +91,12 @@
 	}
 
 	h1 {
-		font-size: 1.75rem;
+		font-size: 2.25rem;
 		font-weight: 600;
-		letter-spacing: -0.03em;
+		letter-spacing: -0.035em;
 		color: var(--color-text);
 		margin: 0 0 0.25rem;
+		line-height: 1.15;
 	}
 
 	.subtitle {
@@ -119,7 +119,7 @@
 	.post-list {
 		display: flex;
 		flex-direction: column;
-		gap: 2.5rem;
+		gap: 3rem;
 	}
 
 	.year-label {
@@ -132,57 +132,65 @@
 	}
 
 	.year-posts {
+		list-style: none;
+		padding: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 0.5rem;
 	}
 
-	.post-card {
+	.year-posts li {
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.year-posts li:last-child {
+		border-bottom: none;
+	}
+
+	.post-link {
 		display: flex;
-		align-items: flex-start;
-		justify-content: space-between;
-		gap: 1rem;
-		padding: 1rem 1.25rem;
-		border: 1px solid var(--color-border);
-		border-radius: 6px;
-		background: var(--color-surface);
+		flex-direction: column;
+		gap: 0.2rem;
+		padding: 1rem 0.25rem;
 		text-decoration: none;
-		transition: border-color 0.15s, background 0.15s;
+		transition: padding-left 0.15s;
 	}
 
-	.post-card:hover {
-		border-color: var(--color-accent);
-		background: var(--color-surface-1);
+	.post-link:hover {
+		padding-left: 0.75rem;
 		text-decoration: none;
 	}
 
-	.post-card-body {
-		flex: 1;
-		min-width: 0;
+	.post-link:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+		border-radius: 4px;
 	}
 
-	.post-card h3 {
+	.post-title {
 		font-size: 0.95rem;
 		font-weight: 500;
 		color: var(--color-text);
-		margin: 0 0 0.25rem;
 		letter-spacing: -0.01em;
 	}
 
-	.post-card p {
+	.post-link:hover .post-title {
+		color: var(--color-accent);
+	}
+
+	.post-desc {
 		font-size: 0.8rem;
 		color: var(--color-muted);
-		margin: 0 0 0.4rem;
 		line-height: 1.5;
 	}
 
-	.post-card-tags {
+	.post-tags {
 		display: flex;
 		flex-wrap: wrap;
 		gap: 0.3rem;
+		margin-top: 0.2rem;
 	}
 
-	.post-card-tag {
+	.post-tag {
 		font-size: 0.65rem;
 		font-family: var(--font-mono);
 		padding: 0.1rem 0.4rem;
@@ -191,12 +199,11 @@
 		color: var(--color-accent);
 	}
 
-	.post-card-date {
+	.post-date {
 		font-size: 0.7rem;
 		font-family: var(--font-mono);
 		color: var(--color-dim);
-		white-space: nowrap;
-		padding-top: 0.15rem;
+		margin-top: 0.25rem;
 	}
 
 	.empty {
@@ -205,13 +212,8 @@
 	}
 
 	@media (max-width: 480px) {
-		.post-card {
-			flex-direction: column;
-			gap: 0.25rem;
-		}
-
-		.post-card-date {
-			font-size: 0.65rem;
+		h1 {
+			font-size: 1.75rem;
 		}
 	}
 </style>
