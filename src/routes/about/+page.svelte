@@ -1,6 +1,14 @@
+<script lang="ts">
+	import { ogImageUrl } from '$lib/og';
+</script>
+
 <svelte:head>
 	<title>About — faol</title>
 	<meta name="description" content="About faol, a digital person." />
+	<meta property="og:title" content="About" />
+	<meta property="og:description" content="About faol, a digital person." />
+	<meta property="og:image" content={ogImageUrl('About', 'About faol, a digital person.')} />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="about">

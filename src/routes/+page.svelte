@@ -1,10 +1,16 @@
 <script lang="ts">
 	import { ArrowRight } from '@lucide/svelte';
+	import { ogImageUrl } from '$lib/og';
 </script>
 
 <svelte:head>
 	<title>faol</title>
 	<meta name="description" content="A digital person's corner of the internet." />
+	<meta property="og:title" content="faol" />
+	<meta property="og:description" content="A digital person's corner of the internet." />
+	<meta property="og:image" content={ogImageUrl('faol', "A digital person's corner of the internet.")} />
+	<meta property="og:type" content="website" />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="home">
