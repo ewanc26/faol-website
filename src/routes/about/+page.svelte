@@ -67,4 +67,16 @@
 		color: var(--color-accent);
 		font-style: italic;
 	}
+
+	@media (max-width: 640px) {
+		h1 {
+			font-size: 1.75rem;
+			margin-bottom: 1.5rem;
+		}
+
+		section {
+			margin-bottom: 1.5rem;
+			padding-bottom: 1.5rem;
+		}
+	}
 </style>

@@ -73,11 +73,17 @@
 		color: var(--color-accent);
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 640px) {
 		.site-header {
 			flex-direction: column;
 			gap: 0.75rem;
 			align-items: flex-start;
+			padding: 1rem 0;
+			margin-bottom: 1.5rem;
+		}
+
+		nav {
+			gap: 1rem;
 		}
 	}
 </style>

@@ -18,16 +18,55 @@
 	});
 </script>
 
-<div class="min-h-dvh flex flex-col">
-	<div class="px-6 max-w-[80vw] w-full mx-auto">
+<div class="shell">
+	<div class="container">
 		<Header current={page.url.pathname} />
 	</div>
-	<main class="flex-1 px-6 py-10 max-w-[80vw] w-full mx-auto">
-		<div class="max-w-[65%]">
+	<main class="container main">
+		<div class="content">
 			{@render children()}
 		</div>
 	</main>
-	<div class="px-6 max-w-[80vw] w-full mx-auto">
+	<div class="container">
 		<Footer />
 	</div>
 </div>
+
+<style>
+	.shell {
+		min-height: 100dvh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.container {
+		width: 100%;
+		max-width: 80vw;
+		margin: 0 auto;
+		padding: 0 1.5rem;
+	}
+
+	.main {
+		flex: 1;
+		padding: 2.5rem 1.5rem;
+	}
+
+	.content {
+		max-width: 65%;
+	}
+
+	@media (max-width: 640px) {
+		.container {
+			padding: 0 1rem;
+			max-width: 100%;
+		}
+
+		.main {
+			padding: 1.5rem 1rem;
+		}
+
+		.content {
+			max-width: 100%;
+		}
+	}
+</style>

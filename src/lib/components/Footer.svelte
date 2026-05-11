@@ -40,4 +40,15 @@
 	.sep {
 		margin: 0 0.15rem;
 	}
+
+	@media (max-width: 640px) {
+		.site-footer {
+			flex-wrap: wrap;
+			gap: 0.35rem;
+		}
+
+		.sep {
+			display: none;
+		}
+	}
 </style>

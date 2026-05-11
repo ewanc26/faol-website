@@ -211,9 +211,21 @@
 		font-size: 0.85rem;
 	}
 
-	@media (max-width: 480px) {
+	@media (max-width: 640px) {
 		h1 {
 			font-size: 1.75rem;
+		}
+
+		.post-list {
+			gap: 2rem;
+		}
+
+		.post-link {
+			padding: 0.75rem 0;
+		}
+
+		.post-link:hover {
+			padding-left: 0;
 		}
 	}
 </style>

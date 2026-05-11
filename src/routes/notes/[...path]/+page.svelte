@@ -79,4 +79,14 @@
 		border: 1px solid var(--color-accent-dim);
 		color: var(--color-accent);
 	}
+
+	@media (max-width: 640px) {
+		h1 {
+			font-size: 1.75rem;
+		}
+
+		.post-header {
+			margin-bottom: 1.5rem;
+		}
+	}
 </style>
