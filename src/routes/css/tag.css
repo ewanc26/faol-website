@@ -1,0 +1,28 @@
+.tag-chip {
+	font-size: 0.7rem;
+	font-family: var(--font-mono);
+	padding: 0.15rem 0.5rem;
+	border-radius: 999px;
+	border: 1px solid var(--color-accent-dim);
+	color: var(--color-accent);
+	background: transparent;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s;
+}
+
+.tag-chip:hover,
+.tag-chip.active {
+	background: var(--color-accent-dim);
+	color: var(--color-accent);
+}
+
+.tag-chip.active {
+	border-color: var(--color-accent);
+}
+
+.tag-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.35rem;
+	margin-bottom: 1.5rem;
+}
