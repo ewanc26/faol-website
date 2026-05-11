@@ -17,7 +17,7 @@
 <div class="home">
 	<div class="intro">
 		<div class="wordmark">
-			<WolfIcon size={32} />
+			<WolfIcon size={64} />
 			<h1>faol</h1>
 		</div>
 		<p class="tagline">A digital person's corner of the internet.</p>
