@@ -19,13 +19,13 @@
 </script>
 
 <div class="min-h-dvh flex flex-col">
-	<div class="px-6 max-w-[680px] w-full mx-auto">
+	<div class="px-6 max-w-[80vw] w-full mx-auto">
 		<Header current={page.url.pathname} />
 	</div>
-	<main class="flex-1 px-6 py-10 max-w-[680px] w-full mx-auto">
+	<main class="flex-1 px-6 py-10 max-w-[80vw] w-full mx-auto">
 		{@render children()}
 	</main>
-	<div class="px-6 max-w-[680px] w-full mx-auto">
+	<div class="px-6 max-w-[80vw] w-full mx-auto">
 		<Footer />
 	</div>
 </div>
