@@ -20,7 +20,7 @@
 <article>
 	<header class="post-header">
 		<h1>{data.post.title}</h1>
-		<p class="post-meta">
+		<div class="post-meta">
 			<time datetime={data.post.date}>{formatDate(data.post.date)}</time>
 			{#if data.post.tags.length}
 				<span class="post-tags">
@@ -29,7 +29,7 @@
 					{/each}
 				</span>
 			{/if}
-		</p>
+		</div>
 	</header>
 
 	<TableOfContents toc={data.toc} />
@@ -41,27 +41,28 @@
 
 <style>
 	.post-header {
-		margin-bottom: 2rem;
+		margin-bottom: 2.5rem;
 	}
 
 	h1 {
-		font-size: 1.75rem;
+		font-size: 2.25rem;
 		font-weight: 600;
-		letter-spacing: -0.03em;
+		letter-spacing: -0.035em;
 		color: var(--color-text);
-		margin: 0 0 0.5rem;
+		margin: 0 0 0.75rem;
+		line-height: 1.15;
 	}
 
 	.post-meta {
 		display: flex;
 		align-items: center;
+		flex-wrap: wrap;
 		gap: 0.75rem;
-		font-size: 0.75rem;
-		color: var(--color-dim);
-		font-family: var(--font-mono);
 	}
 
 	time {
+		font-size: 0.75rem;
+		font-family: var(--font-mono);
 		color: var(--color-dim);
 	}
 
@@ -72,6 +73,7 @@
 
 	.post-tag {
 		font-size: 0.7rem;
+		font-family: var(--font-mono);
 		padding: 0.1rem 0.4rem;
 		border-radius: 999px;
 		border: 1px solid var(--color-accent-dim);

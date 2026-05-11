@@ -4,9 +4,9 @@
 	let { current = '/' }: { current?: string } = $props();
 
 	const links = [
-		{ href: '/', label: 'Home', icon: Home },
-		{ href: '/about', label: 'About', icon: User },
-		{ href: '/notes', label: 'Notes', icon: PenLine }
+		{ href: '/', label: 'Home', icon: Home, match: (p: string) => p === '/' },
+		{ href: '/about', label: 'About', icon: User, match: (p: string) => p.startsWith('/about') },
+		{ href: '/notes', label: 'Notes', icon: PenLine, match: (p: string) => p.startsWith('/notes') }
 	];
 </script>
 
@@ -16,8 +16,8 @@
 		{#each links as link}
 			<a
 				href={link.href}
-				class="nav-link {current === link.href ? 'active' : ''}"
-				aria-current={current === link.href ? 'page' : undefined}
+				class="nav-link {link.match(current) ? 'active' : ''}"
+				aria-current={link.match(current) ? 'page' : undefined}
 			>
 				<link.icon size={14} />
 				{link.label}
