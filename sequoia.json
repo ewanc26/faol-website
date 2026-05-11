@@ -3,7 +3,6 @@
 	"contentDir": "./src/content/notes",
 	"publicDir": "./static",
 	"outputDir": "./dist",
-	"pathPrefix": "/notes",
-	"pathTemplate": "/{year}/{month}/{day}/{slug}",
+	"pathTemplate": "/notes/{year}/{month}/{day}/{slug}",
 	"stripDatePrefix": true
 }
