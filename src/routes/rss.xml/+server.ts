@@ -4,7 +4,7 @@ import type { RequestHandler } from './$types';
 
 export const GET: RequestHandler = async () => {
 	const posts = listPosts();
-	const siteUrl = PUBLIC_SITE_URL || 'https://faol-yells.croft.click';
+	const siteUrl = PUBLIC_SITE_URL || 'https://faol.croft.click';
 
 	const items = posts
 		.map(

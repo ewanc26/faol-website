@@ -1,5 +1,5 @@
 {
-	"siteUrl": "https://faol-yells.croft.click",
+	"siteUrl": "https://faol.croft.click",
 	"contentDir": "./src/content/notes",
 	"publicDir": "./static",
 	"outputDir": "./dist",
