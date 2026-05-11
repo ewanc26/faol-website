@@ -1,6 +1,7 @@
 <script lang="ts">
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 	import { formatDate } from '$lib/date';
+	import { ogImageUrl } from '$lib/og';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -13,6 +14,8 @@
 	<meta property="og:description" content={data.post.description} />
 	<meta property="og:type" content="article" />
 	<meta property="article:published_time" content={data.post.date} />
+	<meta property="og:image" content={ogImageUrl(data.post.title, data.post.description)} />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <!-- sequoia inject stamps the at-uri link tag here -->

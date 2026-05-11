@@ -1,6 +1,7 @@
 <script lang="ts">
 	import { getVisibleTags } from '$lib/tags';
 	import { formatDate } from '$lib/date';
+	import { ogImageUrl } from '$lib/og';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -25,6 +26,10 @@
 <svelte:head>
 	<title>Notes — faol</title>
 	<meta name="description" content="Thoughts, observations, whatever." />
+	<meta property="og:title" content="Notes" />
+	<meta property="og:description" content="Thoughts, observations, whatever." />
+	<meta property="og:image" content={ogImageUrl('Notes', 'Thoughts, observations, whatever.')} />
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="notes-header">
