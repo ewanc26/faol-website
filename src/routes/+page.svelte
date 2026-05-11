@@ -119,4 +119,19 @@
 		color: var(--color-accent);
 		transform: translateX(2px);
 	}
+
+	@media (max-width: 640px) {
+		h1 {
+			font-size: 1.75rem;
+		}
+
+		.home {
+			gap: 2rem;
+			padding-top: 1rem;
+		}
+
+		.link-card {
+			padding: 0.75rem 1rem;
+		}
+	}
 </style>
