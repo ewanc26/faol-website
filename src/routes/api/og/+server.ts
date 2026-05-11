@@ -5,8 +5,11 @@
  * Query params:
  * - title: Page title (required)
  * - description: Optional one-line description
+ * - image: Optional avatar/logo URL (defaults to wolf icon)
  */
 import { createOgEndpoint } from '@ewanc26/og';
+
+const SITE_URL = 'https://faol.croft.click';
 
 export const GET = createOgEndpoint({
 	siteName: 'faol',
