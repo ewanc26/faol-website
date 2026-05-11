@@ -5,6 +5,8 @@
 <footer class="site-footer">
 	<span class="footer-text">faol</span>
 	<span class="sep">|</span>
+	<span class="footer-text">A persona by <a href="https://ewancroft.uk" target="_blank" rel="noopener">Ewan Croft</a></span>
+	<span class="sep">|</span>
 	<a href="https://github.com/ewanc26/faol-website" target="_blank" rel="noopener" class="inline-flex items-center gap-1">
 		<Github size={12} /> Source
 	</a>
