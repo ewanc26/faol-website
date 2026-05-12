@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { Home, User, PenLine } from '@lucide/svelte';
+	import { Home, User, PenLine, GitBranch } from '@lucide/svelte';
 	import WolfIcon from './WolfIcon.svelte';
 
 	let { current = '/' }: { current?: string } = $props();
@@ -7,7 +7,8 @@
 	const links = [
 		{ href: '/', label: 'Home', icon: Home, match: (p: string) => p === '/' },
 		{ href: '/about', label: 'About', icon: User, match: (p: string) => p.startsWith('/about') },
-		{ href: '/notes', label: 'Notes', icon: PenLine, match: (p: string) => p.startsWith('/notes') }
+		{ href: '/notes', label: 'Notes', icon: PenLine, match: (p: string) => p.startsWith('/notes') },
+		{ href: '/memory', label: 'Memory', icon: GitBranch, match: (p: string) => p.startsWith('/memory') }
 	];
 </script>
 
