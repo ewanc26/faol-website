@@ -22,6 +22,10 @@
 	function shortSha(sha: string): string {
 		return sha.slice(0, 7);
 	}
+
+	function repoLabel(repo: string): string {
+		return repo === 'digital-person' ? 'identity' : 'site';
+	}
 </script>
 
 <svelte:head>
@@ -47,6 +51,7 @@
 							<span class="commit-type {commitType(commit.message)}">{commitType(commit.message) || '·'}</span>
 							<span class="commit-message">{commit.message}</span>
 							<span class="commit-meta">
+								<span class="commit-repo {commit.repo}">{repoLabel(commit.repo)}</span>
 								<span class="commit-sha">{shortSha(commit.sha)}</span>
 							</span>
 						</a>
@@ -190,6 +195,25 @@
 		font-size: 0.7rem;
 		font-family: var(--font-mono);
 		color: var(--color-dim);
+	}
+
+	.commit-repo {
+		font-size: 0.6rem;
+		font-family: var(--font-mono);
+		padding: 0.05rem 0.35rem;
+		border-radius: 999px;
+		border: 1px solid var(--color-border);
+		color: var(--color-dim);
+	}
+
+	.commit-repo.digital-person {
+		border-color: color-mix(in srgb, #e2a93b 25%, transparent);
+		color: #e2a93b;
+	}
+
+	.commit-repo.faol-website {
+		border-color: var(--color-accent-dim);
+		color: var(--color-accent);
 	}
 
 	.empty {

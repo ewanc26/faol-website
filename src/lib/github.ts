@@ -4,6 +4,7 @@ export interface GitCommit {
 	date: string;
 	author: string;
 	url: string;
+	repo: string;
 }
 
 export async function fetchCommits(
@@ -30,6 +31,7 @@ export async function fetchCommits(
 		message: c.commit.message.split('\n')[0],
 		date: c.commit.author.date,
 		author: c.commit.author.name,
-		url: c.html_url
+		url: c.html_url,
+		repo
 	}));
 }

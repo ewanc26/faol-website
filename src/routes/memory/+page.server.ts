@@ -8,6 +8,13 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 		'cache-control': 'public, max-age=3600, s-maxage=3600'
 	});
 
-	const commits = await fetchCommits('ewanc26', 'faol-website', 50);
+	const [websiteCommits, personCommits] = await Promise.all([
+		fetchCommits('ewanc26', 'faol-website', 25),
+		fetchCommits('ewanc26', 'digital-person', 25)
+	]);
+
+	const commits = [...websiteCommits, ...personCommits].sort(
+		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
+	);
 	return { commits };
 };
