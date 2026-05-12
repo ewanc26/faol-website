@@ -10,14 +10,15 @@ export interface GitCommit {
 export async function fetchCommits(
 	owner: string,
 	repo: string,
-	perPage = 50
+	perPage = 50,
+	path?: string
 ): Promise<GitCommit[]> {
-	const res = await fetch(
-		`https://api.github.com/repos/${owner}/${repo}/commits?per_page=${perPage}`,
-		{
-			headers: { Accept: 'application/vnd.github+json' }
-		}
-	);
+	let url = `https://api.github.com/repos/${owner}/${repo}/commits?per_page=${perPage}`;
+	if (path) url += `&path=${encodeURIComponent(path)}`;
+
+	const res = await fetch(url, {
+		headers: { Accept: 'application/vnd.github+json' }
+	});
 
 	if (!res.ok) {
 		console.error(`GitHub API error: ${res.status}`);
