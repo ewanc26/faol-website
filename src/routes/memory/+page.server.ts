@@ -10,7 +10,7 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 
 	const [websiteCommits, personCommits] = await Promise.all([
 		fetchCommits('ewanc26', 'faol-website', 25),
-		fetchCommits('ewanc26', 'digital-person', 25)
+		fetchCommits('ewanc26', 'digital-person', 25, 'person/faol')
 	]);
 
 	const commits = [...websiteCommits, ...personCommits].sort(
