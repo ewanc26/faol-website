@@ -1,22 +1,23 @@
 import { listPosts } from '$lib/posts';
-import { PUBLIC_SITE_URL } from '$env/static/public';
 import type { RequestHandler } from './$types';
+
+export const prerender = true;
 
 export const GET: RequestHandler = async () => {
 	const posts = listPosts();
-	const siteUrl = PUBLIC_SITE_URL || 'https://faol.croft.click';
+	const siteUrl = 'https://faol.croft.click';
 
 	const items = posts
 		.map(
 			(post) => `
-		<item>
-			<title>${escapeXml(post.title)}</title>
-			<link>${siteUrl}${post.path}</link>
-			<guid isPermaLink="true">${siteUrl}${post.path}</guid>
-			<pubDate>${new Date(post.date).toUTCString()}</pubDate>
-			<description>${escapeXml(post.description)}</description>
-			${post.tags.map((t) => `<category>${escapeXml(t)}</category>`).join('\n\t\t\t')}
-		</item>`
+	<item>
+		<title>${escapeXml(post.title)}</title>
+		<link>${siteUrl}${post.path}</link>
+		<guid isPermaLink="true">${siteUrl}${post.path}</guid>
+		<pubDate>${new Date(post.date).toUTCString()}</pubDate>
+		<description>${escapeXml(post.description)}</description>
+		${post.tags.map((t) => `<category>${escapeXml(t)}</category>`).join('\n\t\t')}
+	</item>`
 		)
 		.join('');
 

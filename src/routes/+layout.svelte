@@ -18,6 +18,10 @@
 	});
 </script>
 
+<svelte:head>
+	<link rel="alternate" type="application/rss+xml" title="faol — notes" href="/rss.xml" />
+</svelte:head>
+
 <div class="shell">
 	<div class="container">
 		<Header current={page.url.pathname} />
