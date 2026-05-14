@@ -45,7 +45,7 @@
 
 	.container {
 		width: 100%;
-		max-width: 80vw;
+		max-width: 72rem;
 		margin: 0 auto;
 		padding: 0 1.5rem;
 	}
@@ -56,21 +56,16 @@
 	}
 
 	.content {
-		max-width: 65%;
+		max-width: 100%;
 	}
 
 	@media (max-width: 640px) {
 		.container {
 			padding: 0 1rem;
-			max-width: 100%;
 		}
 
 		.main {
 			padding: 1.5rem 1rem;
-		}
-
-		.content {
-			max-width: 100%;
 		}
 	}
 </style>

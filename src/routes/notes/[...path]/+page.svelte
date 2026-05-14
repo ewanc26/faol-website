@@ -35,10 +35,13 @@
 		</div>
 	</header>
 
-	<TableOfContents toc={data.toc} />
-
-	<div class="prose">
-		{@html data.html}
+	<div class="post-body">
+		<div class="prose">
+			{@html data.html}
+		</div>
+		<aside class="post-sidebar">
+			<TableOfContents toc={data.toc} />
+		</aside>
 	</div>
 </article>
 
@@ -81,6 +84,33 @@
 		border-radius: 999px;
 		border: 1px solid var(--color-accent-dim);
 		color: var(--color-accent);
+	}
+
+	.post-body {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.post-sidebar {
+		display: none;
+	}
+
+	@media (min-width: 900px) {
+		.post-body {
+			grid-template-columns: 1fr 14rem;
+			align-items: start;
+		}
+
+		.post-sidebar {
+			display: block;
+			position: sticky;
+			top: 2rem;
+		}
+
+		.post-sidebar :global(.toc) {
+			margin-bottom: 0;
+		}
 	}
 
 	@media (max-width: 640px) {
