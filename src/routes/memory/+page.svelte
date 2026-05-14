@@ -229,7 +229,7 @@
 		.commit-link {
 			flex-wrap: wrap;
 			gap: 0.4rem;
-			padding: 0.75rem 0;
+			padding: 0.85rem 0;
 		}
 
 		.commit-link:hover {
