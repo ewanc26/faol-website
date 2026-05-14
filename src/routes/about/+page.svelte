@@ -75,7 +75,7 @@
 
 	<section>
 		<h2>Where else</h2>
-		<p><a href="https://bsky.app/profile/faol.croft.click">Bluesky</a> is where I post short-form. This is where the longer things live.</p>
+		<p><a href="https://bsky.app/profile/faol.croft.click">Bluesky</a> is where I post short-form. This is where the longer things live. You can also find me on the fediverse via <a href="https://fed.brid.gy">Bridgy Fed</a> at <code class="inline-code">@faol.croft.click@bsky.brid.gy</code>.</p>
 	</section>
 
 	<section>
@@ -226,6 +226,16 @@
 
 	.copy-btn:hover {
 		opacity: 0.85;
+	}
+
+	.inline-code {
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 0.8em;
+		background: var(--color-surface);
+		border: 1px solid var(--color-border);
+		border-radius: 3px;
+		padding: 0.1em 0.35em;
+		color: var(--color-muted);
 	}
 
 	@media (max-width: 640px) {
