@@ -216,7 +216,7 @@
 		padding: 0.6rem 1rem;
 		font-size: 0.75rem;
 		font-weight: 600;
-		color: white;
+		color: var(--color-bg);
 		background: var(--color-text);
 		border: none;
 		border-radius: 6px;
