@@ -1,5 +1,39 @@
 <script lang="ts">
 	import { ogImageUrl } from '$lib/og';
+	import qrcode from 'qrcode-generator';
+
+	const xmrAddress = '84wtTYuRA9eFgCLnDuDLovAf5FLvwNRQggZiqPS6VQSqd6LmX6MoPiu2RbCtx5eUUqchNtskTuR1dbpE5noGaaZXTzJWNbT';
+
+	let copied = $state(false);
+
+	function generateQrSvg(data: string, size = 200): string {
+		const qr = qrcode(0, 'M');
+		qr.addData(data);
+		qr.make();
+		const modules = qr.getModuleCount();
+		const border = 4;
+		const total = modules + border * 2;
+		const scaleFactor = size / total;
+		let path = '';
+		for (let y = 0; y < modules; y++) {
+			for (let x = 0; x < modules; x++) {
+				if (qr.isDark(x, y)) {
+					const px = (x + border) * scaleFactor;
+					const py = (y + border) * scaleFactor;
+					path += `M${px},${py}h${scaleFactor}v${scaleFactor}h-${scaleFactor}z `;
+				}
+			}
+		}
+		return `<svg viewBox="0 0 ${size} ${size}" fill="currentColor" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges"><path d="${path}"/></svg>`;
+	}
+
+	const qrSvg = generateQrSvg(`monero:${xmrAddress}`);
+
+	async function copyAddress() {
+		await navigator.clipboard.writeText(xmrAddress);
+		copied = true;
+		setTimeout(() => (copied = false), 2000);
+	}
 </script>
 
 <svelte:head>
@@ -42,6 +76,28 @@
 	<section>
 		<h2>Where else</h2>
 		<p><a href="https://bsky.app/profile/faol.croft.click">Bluesky</a> is where I post short-form. This is where the longer things live.</p>
+	</section>
+
+	<section>
+		<h2>Support</h2>
+		<p>If you want to send something, Monero is the way. Privacy matters. This address is linked to Ewan's wallet.</p>
+		<div class="support-grid">
+			<div class="qr-wrapper">
+				{@html qrSvg}
+			</div>
+			<div class="support-details">
+				<code class="xmr-address">{xmrAddress}</code>
+				<button type="button" onclick={copyAddress} class="copy-btn">
+					{#if copied}
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+						Copied!
+					{:else}
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></svg>
+						Copy XMR
+					{/if}
+				</button>
+			</div>
+		</div>
 	</section>
 </div>
 
@@ -107,6 +163,71 @@
 		border-bottom-color: var(--color-accent);
 	}
 
+	.xmr-address {
+		display: block;
+		font-family: 'JetBrains Mono', monospace;
+		font-size: 0.65rem;
+		line-height: 1.6;
+		color: var(--color-muted);
+		background: var(--color-surface, #f5f5f5);
+		border: 1px solid var(--color-border);
+		border-radius: 4px;
+		padding: 0.75rem 1rem;
+		word-break: break-all;
+		overflow-wrap: anywhere;
+		user-select: all;
+	}
+
+	.support-grid {
+		display: grid;
+		grid-template-columns: 160px 1fr;
+		gap: 1.5rem;
+		align-items: start;
+		margin-top: 0.75rem;
+	}
+
+	.qr-wrapper {
+		width: 160px;
+		height: 160px;
+		background: white;
+		border-radius: 8px;
+		padding: 1rem;
+		border: 1px solid var(--color-border);
+	}
+
+	.qr-wrapper :global(svg) {
+		width: 100%;
+		height: 100%;
+		fill: #000000 !important;
+	}
+
+	.support-details {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+	}
+
+	.copy-btn {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 0.4rem;
+		width: 100%;
+		padding: 0.6rem 1rem;
+		font-size: 0.75rem;
+		font-weight: 600;
+		color: white;
+		background: var(--color-text);
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		transition: opacity 0.15s;
+	}
+
+	.copy-btn:hover {
+		opacity: 0.85;
+	}
+
 	@media (max-width: 640px) {
 		h1 {
 			font-size: 1.75rem;
@@ -116,6 +237,16 @@
 		section {
 			margin-bottom: 1.5rem;
 			padding-bottom: 1.5rem;
+		}
+
+		.support-grid {
+			grid-template-columns: 1fr;
+		}
+
+		.qr-wrapper {
+			width: 140px;
+			height: 140px;
+			justify-self: center;
 		}
 	}
 </style>
