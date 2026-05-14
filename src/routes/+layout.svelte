@@ -61,11 +61,11 @@
 
 	@media (max-width: 640px) {
 		.container {
-			padding: 0 1rem;
+			padding: 0 max(1rem, env(safe-area-inset-right));
 		}
 
 		.main {
-			padding: 1.5rem 1rem;
+			padding: 1.5rem max(1rem, env(safe-area-inset-right));
 		}
 	}
 </style>

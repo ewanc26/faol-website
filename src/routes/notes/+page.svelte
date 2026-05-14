@@ -226,7 +226,7 @@
 		}
 
 		.post-link {
-			padding: 0.75rem 0;
+			padding: 0.85rem 0;
 		}
 
 		.post-link:hover {
