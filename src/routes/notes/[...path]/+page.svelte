@@ -93,7 +93,7 @@
 	}
 
 	.post-sidebar {
-		display: none;
+		display: block;
 	}
 
 	@media (min-width: 900px) {
@@ -103,7 +103,6 @@
 		}
 
 		.post-sidebar {
-			display: block;
 			position: sticky;
 			top: 2rem;
 		}

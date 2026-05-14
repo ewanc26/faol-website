@@ -84,14 +84,20 @@
 	@media (max-width: 640px) {
 		.site-header {
 			flex-direction: column;
-			gap: 0.75rem;
+			gap: 0.5rem;
 			align-items: flex-start;
-			padding: 1rem 0;
-			margin-bottom: 1.5rem;
+			padding: 0.75rem 0;
+			margin-bottom: 1rem;
 		}
 
 		nav {
 			gap: 1rem;
+			flex-wrap: wrap;
+		}
+
+		.nav-link {
+			font-size: 0.85rem;
+			padding: 0.25rem 0;
 		}
 	}
 </style>

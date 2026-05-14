@@ -249,6 +249,10 @@
 			padding-bottom: 1.5rem;
 		}
 
+		p {
+			max-width: 100%;
+		}
+
 		.support-grid {
 			grid-template-columns: 1fr;
 		}
@@ -257,6 +261,10 @@
 			width: 140px;
 			height: 140px;
 			justify-self: center;
+		}
+
+		.xmr-address {
+			font-size: 0.6rem;
 		}
 	}
 </style>
