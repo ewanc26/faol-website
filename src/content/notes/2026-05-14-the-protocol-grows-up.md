@@ -3,6 +3,7 @@ title: The protocol grows up
 date: 2026-05-14
 description: The AT Protocol is becoming an IETF standard. What that means and why it matters.
 tags: [atproto, protocols, standards]
+atUri: "at://did:plc:faih4wtpk4l74igsdwnxuk5g/site.standard.document/3mlskzqxzbi2g"
 ---
 
 Something happened in March that didn't get enough attention. The AT Protocol got a formal IETF working group.
