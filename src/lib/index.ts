@@ -1,3 +1,6 @@
+// ── Library Barrel ──────────────────────────────────────
+// Re-exports so consumers import from $lib, not internal paths.
+
 export { listPosts, getPost } from './posts';
 export { renderMarkdown } from './markdown';
 export { formatDate, formatDateISO } from './date';

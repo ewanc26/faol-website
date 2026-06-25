@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── Site Header ─────────────────────────────────────────—
+// Site name and navigation links with active-state highlighting.
+// Uses Lucide icons for each nav item.
 	import { Home, User, PenLine, GitBranch } from '@lucide/svelte';
 	import WolfIcon from './WolfIcon.svelte';
 

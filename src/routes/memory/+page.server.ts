@@ -1,3 +1,7 @@
+// ── Memory (Server) ─────────────────────────────────────
+// Fetches recent commits from the website and identity repos,
+// merges them chronologically. Not prerendered — data comes from GitHub API.
+
 import { fetchCommits } from '$lib/github';
 import type { PageServerLoad } from './$types';
 

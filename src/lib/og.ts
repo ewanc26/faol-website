@@ -1,3 +1,5 @@
+// ── OpenGraph Image URL Builder ─────────────────────────
+
 /**
  * Build the OG image URL for a given title and optional description.
  * Includes the wolf icon as the default avatar.

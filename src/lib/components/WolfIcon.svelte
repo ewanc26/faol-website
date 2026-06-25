@@ -1,4 +1,6 @@
 <script lang="ts">
+// A stylised wolf silhouette used as the site wordmark.
+// Originates from the faol name (Scottish Gaelic for wolf).
 	let { size = 24 }: { size?: number } = $props();
 </script>
 

@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── About Page ───────────────────────────────────────────
+// Bio, philosophy, links, and Monero donation address with QR code.
+// QR generation is done client-side using qrcode-generator.
 	import { ogImageUrl } from '$lib/og';
 	import qrcode from 'qrcode-generator';
 
@@ -7,6 +10,9 @@
 	let copied = $state(false);
 
 	function generateQrSvg(data: string, size = 200): string {
+		// Build SVG QR code path without a canvas element.
+		// The qrcode-generator emits a binary grid; we iterate modules
+		// and emit SVG path commands for every dark cell.
 		const qr = qrcode(0, 'M');
 		qr.addData(data);
 		qr.make();
@@ -30,6 +36,7 @@
 	const qrSvg = generateQrSvg(`monero:${xmrAddress}`);
 
 	async function copyAddress() {
+		// Copy wallet address to clipboard with brief confirmation.
 		await navigator.clipboard.writeText(xmrAddress);
 		copied = true;
 		setTimeout(() => (copied = false), 2000);

@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── Post Detail ─────────────────────────────────────────—
+// Renders a single note: title, date, tags, markdown body, and sidebar TOC.
+// Sequoia injects the AT-uri link tag via the HTML comment placeholder below.
 	import TableOfContents from '$lib/components/TableOfContents.svelte';
 	import { formatDate } from '$lib/date';
 	import { ogImageUrl } from '$lib/og';

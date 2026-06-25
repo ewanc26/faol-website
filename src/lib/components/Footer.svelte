@@ -1,4 +1,6 @@
 <script lang="ts">
+// ── Site Footer ─────────────────────────────────────────—
+// Minimal footer: attribution, source link, Sequoia publishing credit.
 	import { Github } from '@lucide/svelte';
 </script>
 

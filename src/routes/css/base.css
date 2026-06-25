@@ -1,3 +1,7 @@
+/* ── Base Reset and Globals ─────────────────────────────── */
+/* Box-sizing, font defaults, focus-visible, link colours.    */
+/* No AI-slop reset patterns — just what we actually need.   */
+
 @layer base {
 	*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 

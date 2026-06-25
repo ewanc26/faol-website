@@ -1,3 +1,9 @@
+/* ── Layout Stylesheet ───────────────────────────────────── */
+/* Entry point for all global CSS. Tailwind is imported first,  */
+/* then the design system layers in order: fonts → tokens →    */
+/* base → prose → timeline → tag → motion.                     */
+
+
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 

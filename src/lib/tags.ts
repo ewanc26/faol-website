@@ -1,10 +1,15 @@
+// ── Tag Index ───────────────────────────────────────────
+// Builds a count-per-tag map from an array of posts, sorted by frequency.
+
 import type { PostMeta } from './posts';
 
+/** Tag name and number of posts using it. */
 export interface TagCount {
 	tag: string;
 	count: number;
 }
 
+/** Count tag usage across posts, returning frequency-sorted entries. */
 export function getVisibleTags(posts: PostMeta[]): TagCount[] {
 	const counts = new Map<string, number>();
 	for (const post of posts) {

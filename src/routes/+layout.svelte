@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── Root Layout (Shell) ─────────────────────────────────
+// Wraps every page in header, main content area, and footer.
+// Registers the crossfade view transition for SvelteKit navigation.
 	import './layout.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -8,14 +11,16 @@
 	let { children }: { children: any } = $props();
 
 	onNavigate((navigation) => {
-		if (!document.startViewTransition) return;
-		return new Promise((resolve) => {
-			document.startViewTransition(async () => {
-				resolve();
-				await navigation.complete;
+			// SvelteKit view transition: crossfade between pages.
+			// Only fires when the browser supports startViewTransition.
+			if (!document.startViewTransition) return;
+			return new Promise((resolve) => {
+				document.startViewTransition(async () => {
+					resolve();
+					await navigation.complete;
+				});
 			});
 		});
-	});
 </script>
 
 <svelte:head>

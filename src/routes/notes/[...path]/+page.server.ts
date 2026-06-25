@@ -1,3 +1,7 @@
+// ── Post Detail (Server) ─────────────────────────────────
+// Generates static entries for every post, loads the matched post,
+// renders its Markdown to HTML, and returns the TOC alongside.
+
 import { getPost, listPosts } from '$lib/posts';
 import { renderMarkdown } from '$lib/markdown';
 import { error } from '@sveltejs/kit';

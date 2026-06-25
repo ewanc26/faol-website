@@ -1,3 +1,7 @@
+// ── SvelteKit Configuration ─────────────────────────────
+// Vercel adapter with permissive prerender error handling.
+// Warnings instead of failures for missing IDs and HTTP errors.
+
 import adapter from '@sveltejs/adapter-vercel';
 
 /** @type {import('@sveltejs/kit').Config} */

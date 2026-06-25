@@ -1,3 +1,7 @@
+/* ── Tag Chips ─────────────────────────────────────────── */
+/* Interactive pill buttons for tag filtering.                 */
+/* Active and hover states fill the accent-dim background.     */
+
 .tag-chip {
 	font-size: 0.7rem;
 	font-family: var(--font-mono);
