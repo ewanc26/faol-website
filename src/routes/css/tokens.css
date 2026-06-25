@@ -1,3 +1,8 @@
+/* ── Design Tokens ─────────────────────────────────────── */
+/* Forest-floor dark palette with sage accent.               */
+/* Tonal layering: bg (deepest) < surface < surface-1.       */
+/* Accent is understated — under 10% of any screen.          */
+
 :root {
 	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
 	--font-mono: 'JetBrains Mono', ui-monospace, monospace;

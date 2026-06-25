@@ -1,3 +1,7 @@
+/* ── Motion ────────────────────────────────────────────────── */
+/* Subtle fade-in entrance and view-transition crossfade.        */
+/* Respects prefers-reduced-motion — no animation when unset.    */
+
 @keyframes fade-in {
 	from { opacity: 0; }
 	to   { opacity: 1; }

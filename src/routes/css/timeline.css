@@ -1,3 +1,7 @@
+/* ── Timeline (Legacy) ─────────────────────────────────── */
+/* Left-column-date layout for post lists. Replaced by the      */
+/* year-grouped notes index but kept for any archive views.     */
+
 .timeline {
 	display: flex;
 	flex-direction: column;

@@ -1,3 +1,5 @@
+// ── OpenGraph Image Endpoint ───────────────────────────
+
 /**
  * Dynamic OG image endpoint.
  * Generates OpenGraph images on demand using @ewanc26/og.
@@ -9,6 +11,7 @@
  */
 import { createOgEndpoint } from '@ewanc26/og';
 
+// Dark-forest-green palette matching the site design system.
 const SITE_URL = 'https://faol.croft.click';
 
 export const GET = createOgEndpoint({

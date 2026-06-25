@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── Homepage ─────────────────────────────────────────────
+// Wordmark, tagline, and navigation cards.
+// Uses Lucide icons for link arrows and the custom WolfIcon.
 	import { ArrowRight } from '@lucide/svelte';
 	import { ogImageUrl } from '$lib/og';
 	import WolfIcon from '$lib/components/WolfIcon.svelte';

@@ -1,3 +1,9 @@
+/* ── Prose (Rendered Markdown) ─────────────────────────── */
+/* Typography for rendered note content. Line length capped    */
+/* at 65ch per design-system rules. Blockquotes use a          */
+/* surface-background box per the flat-theme design decision   */
+/* (no side-stripe borders).                                   */
+
 .prose {
 	max-width: 65ch;
 	color: var(--color-muted);

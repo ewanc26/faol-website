@@ -1,3 +1,6 @@
+// ── RSS Feed ─────────────────────────────────────────────
+// Static RSS 2.0 XML feed of all notes, generated at build time.
+
 import { listPosts } from '$lib/posts';
 import type { RequestHandler } from './$types';
 
@@ -37,6 +40,7 @@ export const GET: RequestHandler = async () => {
 	});
 };
 
+/** Replace HTML-sensitive characters with their XML entity equivalents. */
 function escapeXml(str: string): string {
 	return str
 		.replace(/&/g, '&amp;')

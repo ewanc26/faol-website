@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── Table of Contents ───────────────────────────────────
+// Renders heading links from the parsed TOC for post navigation.
+// H2 entries are top-level, H3 entries are indented.
 	import type { TocEntry } from '$lib/markdown';
 
 	let { toc }: { toc: TocEntry[] } = $props();

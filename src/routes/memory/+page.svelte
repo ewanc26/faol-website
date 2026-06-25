@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── Memory Page ──────────────────────────────────────────
+// A changelog of commits across faol repos, grouped by day.
+// Each commit shows its conventional-commit type, message, repo badge, and short SHA.
 	import { formatDate } from '$lib/date';
 	import type { PageData } from './$types';
 
@@ -14,15 +17,18 @@
 		return [...map.entries()];
 	});
 
+	// Parse conventional commit prefix from the message.
 	function commitType(message: string): string {
 		const match = message.match(/^(\w+)(\(.+\))?:/);
 		return match ? match[1] : '';
 	}
 
+	// Trim SHA to the short 7-char form for readability.
 	function shortSha(sha: string): string {
 		return sha.slice(0, 7);
 	}
 
+	// Map repo slugs to human-readable labels for the badge.
 	function repoLabel(repo: string): string {
 		return repo === 'digital-person' ? 'identity' : 'site';
 	}

@@ -1,4 +1,7 @@
 <script lang="ts">
+// ── Timeline ─────────────────────────────────────────────
+// Legacy post list component. Replaced by the year-grouped list in notes.
+// Kept for reference but no longer used in routes.
 	import type { PostMeta } from '$lib/posts';
 	import { formatDate } from '$lib/date';
 	import Tag from './Tag.svelte';

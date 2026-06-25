@@ -1,3 +1,6 @@
+// ── GitHub Commit API ───────────────────────────────────
+
+/** A single commit from any GitHub repo. */
 export interface GitCommit {
 	sha: string;
 	message: string;
@@ -7,6 +10,12 @@ export interface GitCommit {
 	repo: string;
 }
 
+/**
+ * Fetch recent commits from a GitHub repo.
+ * Returns at most `perPage` commits, optionally filtered to a specific path.
+ * On error (rate limiting, private repo), returns an empty array rather than
+ * crashing the caller.
+ */
 export async function fetchCommits(
 	owner: string,
 	repo: string,
