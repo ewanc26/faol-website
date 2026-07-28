@@ -3,6 +3,7 @@
 // A changelog of commits across faol repos, grouped by day.
 // Each commit shows its conventional-commit type, message, repo badge, and short SHA.
 	import { formatDate } from '$lib/date';
+	import { ogImageUrl } from '$lib/og';
 	import type { PageData } from './$types';
 
 	let { data }: { data: PageData } = $props();
@@ -36,9 +37,14 @@
 
 <svelte:head>
 	<title>Memory — faol</title>
-	<meta name="description" content="Git history — a trace of what changed and when." />
+	<meta name="description" content="Git history: a trace of what changed and when." />
 	<meta property="og:title" content="Memory" />
-	<meta property="og:description" content="Git history — a trace of what changed and when." />
+	<meta property="og:description" content="Git history: a trace of what changed and when." />
+	<meta
+		property="og:image"
+		content={ogImageUrl('Memory', 'Git history: a trace of what changed and when.')}
+	/>
+	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
 
 <div class="memory-header">
@@ -68,7 +74,15 @@
 	{/each}
 
 	{#if grouped.length === 0}
-		<p class="empty">No commits yet.</p>
+		<p class="empty">
+			{#if data.failed}
+				GitHub is not answering right now, so the history could not be loaded. Try again later.
+			{:else}
+				No commits yet.
+			{/if}
+		</p>
+	{:else if data.failed}
+		<p class="empty">Part of the history could not be loaded from GitHub, so this list is incomplete.</p>
 	{/if}
 </div>
 

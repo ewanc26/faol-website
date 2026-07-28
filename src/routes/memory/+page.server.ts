@@ -17,8 +17,12 @@ export const load: PageServerLoad = async ({ setHeaders }) => {
 		fetchCommits('ewanc26', 'digital-person', 25, 'person/faol')
 	]);
 
-	const commits = [...websiteCommits, ...personCommits].sort(
+	// null means the GitHub call failed (rate limit, network, bad payload).
+	// The page still renders, but says so rather than claiming an empty history.
+	const failed = websiteCommits === null || personCommits === null;
+
+	const commits = [...(websiteCommits ?? []), ...(personCommits ?? [])].sort(
 		(a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()
 	);
-	return { commits };
+	return { commits, failed };
 };
