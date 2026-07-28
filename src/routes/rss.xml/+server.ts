@@ -2,13 +2,14 @@
 // Static RSS 2.0 XML feed of all notes, generated at build time.
 
 import { listPosts } from '$lib/posts';
+import { SITE_URL } from '$lib/site';
 import type { RequestHandler } from './$types';
 
 export const prerender = true;
 
 export const GET: RequestHandler = async () => {
 	const posts = listPosts();
-	const siteUrl = 'https://faol.croft.click';
+	const siteUrl = SITE_URL;
 
 	const items = posts
 		.map(
