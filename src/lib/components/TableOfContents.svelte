@@ -9,7 +9,8 @@
 
 {#if toc.length}
 	<nav class="toc" aria-label="Table of contents">
-		<h4>On this page</h4>
+		<!-- h2: the post body starts at h2, so an h4 here skipped a level. -->
+		<h2 class="toc-title">On this page</h2>
 		<ul>
 			{#each toc as entry}
 				<li class="toc-{entry.level}">
@@ -29,13 +30,14 @@
 		background: var(--color-surface);
 	}
 
-	.toc h4 {
+	.toc .toc-title {
 		font-size: 0.75rem;
+		font-weight: 500;
 		font-family: var(--font-mono);
 		text-transform: uppercase;
 		letter-spacing: 0.06em;
 		color: var(--color-dim);
-		margin-bottom: 0.5rem;
+		margin: 0 0 0.5rem;
 	}
 
 	.toc ul {

@@ -7,7 +7,8 @@
 
 	const xmrAddress = '84wtTYuRA9eFgCLnDuDLovAf5FLvwNRQggZiqPS6VQSqd6LmX6MoPiu2RbCtx5eUUqchNtskTuR1dbpE5noGaaZXTzJWNbT';
 
-	let copied = $state(false);
+	let copyState: 'idle' | 'copied' | 'failed' = $state('idle');
+	let copyTimer: ReturnType<typeof setTimeout> | undefined;
 
 	function generateQrSvg(data: string, size = 200): string {
 		// Build SVG QR code path without a canvas element.
@@ -37,9 +38,19 @@
 
 	async function copyAddress() {
 		// Copy wallet address to clipboard with brief confirmation.
-		await navigator.clipboard.writeText(xmrAddress);
-		copied = true;
-		setTimeout(() => (copied = false), 2000);
+		// navigator.clipboard is undefined outside a secure context, and
+		// writeText() rejects when permission is denied, so both the
+		// missing-API and rejected cases fall through to a visible,
+		// announced failure state rather than an unhandled rejection.
+		try {
+			if (!navigator.clipboard?.writeText) throw new Error('clipboard unavailable');
+			await navigator.clipboard.writeText(xmrAddress);
+			copyState = 'copied';
+		} catch {
+			copyState = 'failed';
+		}
+		clearTimeout(copyTimer);
+		copyTimer = setTimeout(() => (copyState = 'idle'), 3000);
 	}
 </script>
 
@@ -89,20 +100,30 @@
 		<h2>Support</h2>
 		<p>If you want to send something, Monero is the way. Privacy matters. This address is linked to Ewan's wallet.</p>
 		<div class="support-grid">
-			<div class="qr-wrapper">
+			<div class="qr-wrapper" role="img" aria-label="QR code for the Monero donation address">
 				{@html qrSvg}
 			</div>
 			<div class="support-details">
 				<code class="xmr-address">{xmrAddress}</code>
 				<button type="button" onclick={copyAddress} class="copy-btn">
-					{#if copied}
-						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12" /></svg>
+					{#if copyState === 'copied'}
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
 						Copied!
+					{:else if copyState === 'failed'}
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10" /><path d="M12 8v4" /><path d="M12 16h.01" /></svg>
+						Copy failed
 					{:else}
-						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></svg>
+						<svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2" ry="2" /><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" /></svg>
 						Copy XMR
 					{/if}
 				</button>
+				<p class="copy-status" role="status" aria-live="polite">
+					{#if copyState === 'copied'}
+						Address copied to the clipboard.
+					{:else if copyState === 'failed'}
+						Could not copy automatically. Select the address above and copy it manually.
+					{/if}
+				</p>
 			</div>
 		</div>
 	</section>
@@ -233,6 +254,14 @@
 
 	.copy-btn:hover {
 		opacity: 0.85;
+	}
+
+	.copy-status {
+		font-size: 0.7rem;
+		line-height: 1.5;
+		color: var(--color-muted);
+		margin: 0;
+		min-height: 1em;
 	}
 
 	.inline-code {
