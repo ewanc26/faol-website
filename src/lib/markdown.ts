@@ -42,28 +42,31 @@ const processor = unified()
 	.use(rehypeSlug)
 	.use(rehypeStringify);
 
+/** Recursively collect the text content of a hast node. */
+function hastText(node: any): string {
+	if (node.type === 'text') return node.value;
+	if (!Array.isArray(node.children)) return '';
+	return node.children.map(hastText).join('');
+}
+
 /** Render Markdown to HTML and extract a TOC from H2/H3 headings. */
 export async function renderMarkdown(markdown: string): Promise<RenderResult> {
 	const tree = processor.parse(markdown);
+	const hast: any = await processor.run(tree);
 
-	// Extract H2/H3 headings into a TOC before rehype processes them.
-	// Walking the raw mdast tree avoids parsing slug IDs back out of HTML.
+	// Read the TOC off the *processed* tree so the anchors are exactly the
+	// IDs rehype-slug wrote into the HTML. Deriving them separately from the
+	// mdast text diverged for duplicate headings (rehype-slug appends -1, -2)
+	// and for non-ASCII text, producing table-of-contents links to nowhere.
 	const toc: TocEntry[] = [];
-	for (const node of tree.children) {
-		if (node.type !== 'heading' || node.depth < 2 || node.depth > 3) continue;
-		const text = node.children
-			.filter((c) => c.type === 'text' || c.type === 'inlineCode')
-			.map((c) => ('value' in c ? c.value : ''))
-			.join('');
-		const id = text
-			.toLowerCase()
-			.replace(/[^\w\s-]/g, '')
-			.trim()
-			.replace(/\s/g, '-');
-		toc.push({ level: node.depth, text, id });
+	for (const node of hast.children ?? []) {
+		if (node.type !== 'element') continue;
+		if (node.tagName !== 'h2' && node.tagName !== 'h3') continue;
+		const id = node.properties?.id;
+		if (typeof id !== 'string' || !id) continue;
+		toc.push({ level: Number(node.tagName.slice(1)), text: hastText(node), id });
 	}
 
-	const hast = await processor.run(tree);
 	const html = processor.stringify(hast);
 
 	return { html, toc };
