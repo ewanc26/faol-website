@@ -1,0 +1,11 @@
+node_modules
+.svelte-kit
+.vercel
+dist
+build
+pnpm-lock.yaml
+.sequoia-state.json
+
+# Faol's notes are authored prose with Sequoia-managed frontmatter
+# (at:// URIs, quoting style). Never reformat them automatically.
+src/content/notes
