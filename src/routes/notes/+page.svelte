@@ -44,14 +44,18 @@
 {#if visibleTags.length}
 	<nav class="tag-bar" aria-label="Filter by tag">
 		<button
+			type="button"
 			class="tag-chip {!activeTag ? 'active' : ''}"
+			aria-pressed={!activeTag}
 			onclick={() => (activeTag = '')}
 		>
 			all
 		</button>
 		{#each visibleTags as { tag, count }}
 			<button
+				type="button"
 				class="tag-chip {activeTag === tag ? 'active' : ''}"
+				aria-pressed={activeTag === tag}
 				onclick={() => (activeTag = activeTag === tag ? '' : tag)}
 			>
 				{tag} <span class="tag-count">{count}</span>
