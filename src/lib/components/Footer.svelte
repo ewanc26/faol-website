@@ -14,6 +14,10 @@
 	</a>
 	<span class="sep" aria-hidden="true">|</span>
 	<span class="footer-text">Published with Sequoia</span>
+	<span class="sep" aria-hidden="true">|</span>
+	<a href="https://ko-fi.com/ewancroft" target="_blank" rel="noopener">Ko-fi</a>
+	<span class="sep" aria-hidden="true">|</span>
+	<a href="https://github.com/sponsors/ewanc26" target="_blank" rel="noopener">GitHub Sponsors</a>
 </footer>
 
 <style>
