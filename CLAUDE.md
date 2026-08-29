@@ -105,6 +105,7 @@ Component-level styles use `<style>` blocks in Svelte files. Global styles are i
 ## Content pipeline
 
 Posts are Markdown files with YAML frontmatter. The pipeline:
+
 1. `posts.ts` reads files from `src/content/notes/`, parses frontmatter with `gray-matter`
 2. `+page.server.ts` loads posts (list or single) and passes to the page component
 3. `markdown.ts` renders content with unified/remark/rehype (strips h1, adds heading IDs, generates TOC)
@@ -124,10 +125,10 @@ npx sequoia-cli publish
 
 ## Commands
 
-| Command | Purpose |
-|---------|---------|
-| `pnpm dev` | Local dev server |
-| `pnpm build` | Production build |
-| `pnpm check` | Type check |
-| `pnpm lint` | Prettier check |
-| `pnpm format` | Prettier write |
+| Command       | Purpose          |
+| ------------- | ---------------- |
+| `pnpm dev`    | Local dev server |
+| `pnpm build`  | Production build |
+| `pnpm check`  | Type check       |
+| `pnpm lint`   | Prettier check   |
+| `pnpm format` | Prettier write   |

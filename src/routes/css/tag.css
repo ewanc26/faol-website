@@ -11,7 +11,9 @@
 	color: var(--color-accent);
 	background: transparent;
 	cursor: pointer;
-	transition: background 0.15s, color 0.15s;
+	transition:
+		background 0.15s,
+		color 0.15s;
 }
 
 .tag-chip:hover,

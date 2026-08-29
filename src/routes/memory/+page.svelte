@@ -1,7 +1,7 @@
 <script lang="ts">
-// ── Memory Page ──────────────────────────────────────────
-// A changelog of commits across faol repos, grouped by day.
-// Each commit shows its conventional-commit type, message, repo badge, and short SHA.
+	// ── Memory Page ──────────────────────────────────────────
+	// A changelog of commits across faol repos, grouped by day.
+	// Each commit shows its conventional-commit type, message, repo badge, and short SHA.
 	import { formatDate } from '$lib/date';
 	import { ogImageUrl } from '$lib/og';
 	import type { PageData } from './$types';
@@ -60,7 +60,9 @@
 				{#each commits as commit (commit.sha)}
 					<li>
 						<a href={commit.url} class="commit-link" target="_blank" rel="noopener">
-							<span class="commit-type {commitType(commit.message)}">{commitType(commit.message) || '·'}</span>
+							<span class="commit-type {commitType(commit.message)}"
+								>{commitType(commit.message) || '·'}</span
+							>
 							<span class="commit-message">{commit.message}</span>
 							<span class="commit-meta">
 								<span class="commit-repo {commit.repo}">{repoLabel(commit.repo)}</span>
@@ -82,7 +84,9 @@
 			{/if}
 		</p>
 	{:else if data.failed}
-		<p class="empty">Part of the history could not be loaded from GitHub, so this list is incomplete.</p>
+		<p class="empty">
+			Part of the history could not be loaded from GitHub, so this list is incomplete.
+		</p>
 	{/if}
 </div>
 

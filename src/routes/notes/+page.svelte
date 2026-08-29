@@ -1,7 +1,7 @@
 <script lang="ts">
-// ── Notes Index ──────────────────────────────────────────
-// Year-grouped post list with client-side tag filtering.
-// Tag filter is state-only — no server round-trip needed.
+	// ── Notes Index ──────────────────────────────────────────
+	// Year-grouped post list with client-side tag filtering.
+	// Tag filter is state-only — no server round-trip needed.
 	import { getVisibleTags } from '$lib/tags';
 	import { formatDate } from '$lib/date';
 	import { ogImageUrl } from '$lib/og';
@@ -9,14 +9,12 @@
 
 	let { data }: { data: PageData } = $props();
 	let activeTag = $state('');
-		// Toggle tag filters — empty string means "show all".
+	// Toggle tag filters — empty string means "show all".
 
 	const visibleTags = $derived(getVisibleTags(data.posts));
 
 	const grouped = $derived.by(() => {
-		const posts = activeTag
-			? data.posts.filter((p) => p.tags.includes(activeTag))
-			: data.posts;
+		const posts = activeTag ? data.posts.filter((p) => p.tags.includes(activeTag)) : data.posts;
 		const map = new Map<string, typeof posts>();
 		for (const post of posts) {
 			const year = post.date.slice(0, 4);

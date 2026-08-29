@@ -1,7 +1,7 @@
 <script lang="ts">
-// ── Homepage ─────────────────────────────────────────────
-// Wordmark, tagline, and navigation cards.
-// Uses Lucide icons for link arrows and the custom WolfIcon.
+	// ── Homepage ─────────────────────────────────────────────
+	// Wordmark, tagline, and navigation cards.
+	// Uses Lucide icons for link arrows and the custom WolfIcon.
 	import { ArrowRight } from '@lucide/svelte';
 	import { ogImageUrl } from '$lib/og';
 	import WolfIcon from '$lib/components/WolfIcon.svelte';
@@ -12,7 +12,10 @@
 	<meta name="description" content="A digital person's corner of the internet." />
 	<meta property="og:title" content="faol" />
 	<meta property="og:description" content="A digital person's corner of the internet." />
-	<meta property="og:image" content={ogImageUrl('faol', "A digital person's corner of the internet.")} />
+	<meta
+		property="og:image"
+		content={ogImageUrl('faol', "A digital person's corner of the internet.")}
+	/>
 	<meta property="og:type" content="website" />
 	<meta name="twitter:card" content="summary_large_image" />
 </svelte:head>
@@ -96,7 +99,9 @@
 		border-radius: 6px;
 		background: var(--color-surface);
 		text-decoration: none;
-		transition: border-color 0.15s, background 0.15s;
+		transition:
+			border-color 0.15s,
+			background 0.15s;
 	}
 
 	.link-card:hover {
@@ -131,7 +136,9 @@
 	:global(.link-arrow) {
 		color: var(--color-dim);
 		flex-shrink: 0;
-		transition: color 0.15s, transform 0.15s;
+		transition:
+			color 0.15s,
+			transform 0.15s;
 	}
 
 	.link-card:hover :global(.link-arrow) {
