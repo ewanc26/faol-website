@@ -17,7 +17,5 @@ export function getVisibleTags(posts: PostMeta[]): TagCount[] {
 			counts.set(tag, (counts.get(tag) ?? 0) + 1);
 		}
 	}
-	return [...counts.entries()]
-		.sort((a, b) => b[1] - a[1])
-		.map(([tag, count]) => ({ tag, count }));
+	return [...counts.entries()].sort((a, b) => b[1] - a[1]).map(([tag, count]) => ({ tag, count }));
 }
