@@ -1,7 +1,7 @@
 <script lang="ts">
-// ── Root Layout (Shell) ─────────────────────────────────
-// Wraps every page in header, main content area, and footer.
-// Registers the crossfade view transition for SvelteKit navigation.
+	// ── Root Layout (Shell) ─────────────────────────────────
+	// Wraps every page in header, main content area, and footer.
+	// Registers the crossfade view transition for SvelteKit navigation.
 	import './layout.css';
 	import Header from '$lib/components/Header.svelte';
 	import Footer from '$lib/components/Footer.svelte';
@@ -17,16 +17,16 @@
 	const canonical = $derived(new URL(page.url.pathname, SITE_URL).href);
 
 	onNavigate((navigation) => {
-			// SvelteKit view transition: crossfade between pages.
-			// Only fires when the browser supports startViewTransition.
-			if (!document.startViewTransition) return;
-			return new Promise((resolve) => {
-				document.startViewTransition(async () => {
-					resolve();
-					await navigation.complete;
-				});
+		// SvelteKit view transition: crossfade between pages.
+		// Only fires when the browser supports startViewTransition.
+		if (!document.startViewTransition) return;
+		return new Promise((resolve) => {
+			document.startViewTransition(async () => {
+				resolve();
+				await navigation.complete;
 			});
 		});
+	});
 </script>
 
 <svelte:head>
@@ -43,7 +43,7 @@
 	<div class="container">
 		<Header current={page.url.pathname} />
 	</div>
-	<main id="main" class="container main">
+	<main id="main" class="main container">
 		<div class="content">
 			{@render children()}
 		</div>
