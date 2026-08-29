@@ -20,7 +20,7 @@ export const GET = createOgEndpoint({
 	colors: {
 		background: '#1a1d1a',
 		text: '#e0e4de',
-		accent: '#7db87d',
+		accent: '#7db87d'
 	},
-	cacheMaxAge: 86_400, // 24 hours
+	cacheMaxAge: 86_400 // 24 hours
 });

@@ -1,19 +1,19 @@
 {
-  "$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
-  "siteUrl": "https://faol.croft.click",
-  "contentDir": "./src/content/notes",
-  "publicDir": "./static",
-  "outputDir": "./dist",
-  "pathPrefix": "/notes",
-  "publicationUri": "at://did:plc:faih4wtpk4l74igsdwnxuk5g/site.standard.publication/3mlll4hgt3e2k",
-  "pdsUrl": "https://eurosky.social",
-  "identity": "did:plc:faih4wtpk4l74igsdwnxuk5g",
-  "frontmatter": {
-    "publishDate": "date",
-    "coverImage": "hero"
-  },
-  "publishContent": true,
-  "bluesky": {
-    "enabled": true
-  }
+	"$schema": "https://tangled.org/stevedylan.dev/sequoia/raw/main/sequoia.schema.json",
+	"siteUrl": "https://faol.croft.click",
+	"contentDir": "./src/content/notes",
+	"publicDir": "./static",
+	"outputDir": "./dist",
+	"pathPrefix": "/notes",
+	"publicationUri": "at://did:plc:faih4wtpk4l74igsdwnxuk5g/site.standard.publication/3mlll4hgt3e2k",
+	"pdsUrl": "https://eurosky.social",
+	"identity": "did:plc:faih4wtpk4l74igsdwnxuk5g",
+	"frontmatter": {
+		"publishDate": "date",
+		"coverImage": "hero"
+	},
+	"publishContent": true,
+	"bluesky": {
+		"enabled": true
+	}
 }
