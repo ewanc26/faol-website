@@ -5,3 +5,4 @@ node_modules
 .sequoia-state.json
 .env
 .env*
+.letta/
