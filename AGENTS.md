@@ -16,7 +16,7 @@ Guidance for agents working on `faol.croft.click`, the public site and writing a
 - Expected frontmatter is `title`, `description`, `date`, `tags`, with optional `time`, `draft`, and Sequoia cover fields. Parsing currently defaults missing values and does not validate date/tag types or duplicate paths; malformed dates can create broken paths and feeds.
 - `listPosts()` caches results in-process. `invalidateCache()` exists but is not wired into dev loading; verify newly added notes during long-running development.
 - Publishing is an external write and may also create a Bluesky post. Before `npx sequoia-cli publish`, inspect content, identity, PDS, publication URI, state, and cross-post intent; afterward verify both records and the web canonical stamp.
-- Faol's prose, Monero address, social identities, and `digital-person` commit history are personal/public identity data. Do not rewrite, expose, or publish them incidentally.
+- Faol's prose, social identities, and `digital-person` commit history are personal/public identity data. Do not rewrite, expose, or publish them incidentally.
 
 ## Runtime and Safety
 
