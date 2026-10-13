@@ -80,9 +80,9 @@ A dark reading room in the woods. Warm enough to stay, quiet enough to think. Th
 
 ## 2. Colors
 
-A constrained palette: forest neutrals for depth, sage green for orientation.
+The palette is intentionally small: subtle forest neutrals provide depth, a sage green accent offers directional cues.
 
-**The restrained accent rule.** Sage green appears on links, active states, and tags. It never covers more than 10% of any screen. Its rarity is the point.
+**Accents are limited.** Sage green is reserved for links, active states, and tags, occupying no more than ten percent of any layout.
 
 ### Primary
 
@@ -142,10 +142,10 @@ Cards have a 1px border, not a shadow. Hover raises the border to sage accent an
 
 ### Navigation
 
-- **Style:** header with site name left, nav links right. No background, no border-bottom on links.
-- **Active:** sage accent color on the current link
-- **Hover:** text color shifts from dim to bright
-- **Mobile:** stacks vertically, left-aligned
+- **Style:** header with site name left, navigation links right. No background, unobtrusive borders.
+- **Active:** sage accent on the current link.
+- **Hover:** subtle lightening of text color.
+- **Mobile:** stack vertically, left-aligned.
 
 ### Post detail
 
@@ -158,19 +158,28 @@ Cards have a 1px border, not a shadow. Hover raises the border to sage accent an
 
 ### Do:
 
-- **Do** keep card borders at 1px. Thicker borders feel heavy on dark backgrounds.
-- **Do** use sage accent only for links, active states, and tags. If more than 10% of a screen is green, pull back.
-- **Do** let body text sit in muted (#8a908a), not full text color. The contrast hierarchy is intentional.
-- **Do** vary spacing. Pages should have rhythm, not uniform padding.
-- **Do** use JetBrains Mono for structural markers (dates, year labels, tags). It signals "this is metadata."
-- **Do** cap line length at 65-75ch. Wide text on dark backgrounds is fatiguing.
+* Keep card borders at 1px. Thicker borders feel heavy on dark backgrounds.
+* Restrict the sage accent to links, active states and tags. Keep it under 10% of any screen.
+* Set body text in muted (#8a908a), not full text colour. The contrast hierarchy is intentional.
+* Vary spacing so pages have rhythm instead of uniform padding.
+* Use JetBrains Mono for structural markers: dates, year labels, tags.
+* Cap line length at 65 to 75ch. Wide text on dark backgrounds is fatiguing.
 
 ### Don't:
 
-- **Don't** add box-shadows. This system is flat. Tonal layering and borders carry depth.
-- **Don't** use SaaS landing-page patterns: gradient backgrounds, rounded-everything, hero metrics, CTA buttons. This is a person's space, not a funnel.
-- **Don't** use terminal/hacker aesthetic. No green-on-black monospace pages, no ASCII borders, no command-line cosplay.
-- **Don't** use brutalist rawness. No stark contrast for shock value, no anti-design.
-- **Don't** copy generic blog templates. No Medium clones, no default Tailwind starter feel.
-- **Don't** use pure white (#fff) or pure black (#000). Every neutral is tinted toward the forest hue.
-- **Don't** add em dashes. Use commas, colons, semicolons, periods, or parentheses.
+* Add box-shadows. Tonal layering and borders carry depth.
+* Use SaaS landing-page patterns: gradients, heavy rounded corners, hero metrics, CTA buttons.
+* Use terminal or hacker aesthetics: no green-on-black, ASCII borders or command-line cosplay.
+* Use shock-value design or anti-design. Choose subtlety.
+* Copy generic blog templates. Build a personal space instead.
+* Use pure white or pure black. Tint every neutral toward the forest hue.
+* Use em dashes. Use commas, colons, semicolons, periods or parentheses.
+
+### Accessibility
+
+* Meet WCAG AA contrast. Check the sage accent, muted and dim colours against their backgrounds.
+* Follow the page outline for heading levels, with one H1 per page.
+* Give every interactive element a visible focus style and keyboard support.
+* Write descriptive alt text for images, or use `role="presentation"` for decorative ones.
+* Underline text links, or use a distinct colour that stands out from body text.
+* Don't rely on colour alone to convey information.
