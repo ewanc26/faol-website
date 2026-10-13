@@ -6,7 +6,7 @@
 	"outputDir": "./dist",
 	"pathPrefix": "/notes",
 	"publicationUri": "at://did:plc:faih4wtpk4l74igsdwnxuk5g/site.standard.publication/3mlll4hgt3e2k",
-	"pdsUrl": "https://eurosky.social",
+	"pdsUrl": "https://selfhosted.social",
 	"identity": "did:plc:faih4wtpk4l74igsdwnxuk5g",
 	"frontmatter": {
 		"publishDate": "date",
