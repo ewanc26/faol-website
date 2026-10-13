@@ -13,8 +13,8 @@
 	--color-border: #3a3f3a;
 	--color-border-1: #4a4f4a;
 	--color-text: #e0e4de;
-	--color-muted: #8a908a;
-	--color-dim: #5e645e;
+	--color-muted: #9ea49e;
+	--color-dim: #949a94;
 	--color-accent: #7db87d;
 	--color-accent-dim: color-mix(in srgb, var(--color-accent) 15%, transparent);
 }
