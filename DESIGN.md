@@ -8,8 +8,8 @@ colors:
   forest-border: '#3a3f3a'
   forest-border-1: '#4a4f4a'
   forest-text: '#e0e4de'
-  forest-muted: '#8a908a'
-  forest-dim: '#5e645e'
+  forest-muted: '#9ea49e'
+  forest-dim: '#949a94'
   sage-accent: '#7db87d'
 typography:
   display:
@@ -96,8 +96,8 @@ The palette is intentionally small: subtle forest neutrals provide depth, a sage
 - **Bark Border** (#3a3f3a): Default borders. Separates without dividing.
 - **Light Bark** (#4a4f4a): Emphasised borders, hover states on borders.
 - **Moonlight Text** (#e0e4de): Primary text. Warm white, not pure white.
-- **Mist Muted** (#8a908a): Secondary text, descriptions. The workhorse for body content that isn't the main point.
-- **Shadow Dim** (#5e645e): Tertiary text, dates, labels. The quietest readable text.
+- **Mist Muted** (#9ea49e): Secondary text, descriptions. The workhorse for body content that isn't the main point.
+- **Shadow Dim** (#949a94): Tertiary text, dates, labels. The quietest readable text.
 
 ## 3. Typography
 
@@ -160,7 +160,7 @@ Cards have a 1px border, not a shadow. Hover raises the border to sage accent an
 
 * Keep card borders at 1px. Thicker borders feel heavy on dark backgrounds.
 * Restrict the sage accent to links, active states and tags. Keep it under 10% of any screen.
-* Set body text in muted (#8a908a), not full text colour. The contrast hierarchy is intentional.
+* Set body text in muted (#9ea49e), not full text colour. The contrast hierarchy is intentional.
 * Vary spacing so pages have rhythm instead of uniform padding.
 * Use JetBrains Mono for structural markers: dates, year labels, tags.
 * Cap line length at 65 to 75ch. Wide text on dark backgrounds is fatiguing.
