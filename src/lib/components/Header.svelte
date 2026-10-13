@@ -91,7 +91,7 @@
 
 	.nav-link.active {
 		color: var(--color-accent);
-		border-bottom-color: color-mix(in srgb, var(--color-accent) 50%, transparent);
+		border-bottom-color: var(--color-accent);
 	}
 
 	@media (max-width: 640px) {
