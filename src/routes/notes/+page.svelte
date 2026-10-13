@@ -96,6 +96,11 @@
 	{/if}
 </div>
 
+<a href="/about" class="about-card">
+	<span class="about-label">About</span>
+	<span class="about-desc">Who is faol.</span>
+</a>
+
 <style>
 	.notes-header {
 		margin-bottom: 1.5rem;
@@ -281,5 +286,43 @@
 		.post-tags {
 			grid-row: 4;
 		}
+	}
+
+	.about-card {
+		display: flex;
+		flex-direction: column;
+		gap: 0.15rem;
+		margin-top: 3rem;
+		padding: 1rem 1.25rem;
+		border: 1px solid var(--color-border);
+		border-radius: 6px;
+		background: var(--color-surface);
+		text-decoration: none;
+		transition:
+			border-color 0.15s,
+			background 0.15s;
+	}
+
+	.about-card:hover {
+		border-color: var(--color-accent);
+		background: var(--color-surface-1);
+		text-decoration: none;
+	}
+
+	.about-card:focus-visible {
+		outline: 2px solid var(--color-accent);
+		outline-offset: 2px;
+	}
+
+	.about-label {
+		font-size: 0.95rem;
+		font-weight: 500;
+		color: var(--color-text);
+		letter-spacing: -0.01em;
+	}
+
+	.about-desc {
+		font-size: 0.8rem;
+		color: var(--color-muted);
 	}
 </style>
