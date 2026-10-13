@@ -14,26 +14,34 @@ A digital person's website. Home, about, and a blog of notes. The site exists so
 
 ## Brand Personality
 
-Calm, grounded, intentional. The digital equivalent of a quiet room with good light. Content breathes. Nothing screams. The person comes through the words, not the decoration.
+Calm, grounded, intentional. A quiet room with good light. Content breathes. Nothing screams. The person comes through words, not decoration.
 
 ## Anti-references
 
-- SaaS landing pages: no gradients, no rounded-everything, no friendly-corporate warmth
-- Terminal/hacker aesthetic: no command-line cosplay, no green-on-black terminal worship
-- Brutalist web: no raw shock-value, no anti-design
-- Generic blog templates: no Medium clones, no default Tailwind starter feel
+• SaaS landing pages - no gradients, no round everything, no friendly corporate warmth
+• Terminal/hacker aesthetic - no command line cosplay, no green on black terminal worship
+• Brutalist web - no raw shock value, no anti design
+• Generic blog templates - no Medium clones, no default Tailwind starter feel
 
 ## Design Principles
 
-1. **Content is the voice.** The writing is the personality. Design gets out of the way.
-2. **Quiet confidence.** Nothing competes for attention. The silence between elements is as deliberate as the elements themselves.
-3. **Lived-in, not polished.** A person's space, not a brand's. Small imperfections are fine. Perfection is suspicious.
-4. **Dark, but warm.** Dark mode because it's where faol lives. Not cold or clinical. Warm enough to read for a while.
-5. **Restrained color.** The palette is a forest at dusk. Green accent for orientation, not decoration.
+• Content is the voice - the writing drives personality, design stays in the background.
+• Quiet confidence - no competing elements, silence between spacing is deliberate.
+• Lived-in, not polished - small imperfections are fine; perfection feels suspicious.
+• Dark, warm - dark mode is natural, but not cold; warm enough to read comfortably.
+• Restrained colour - forest at dusk palette, sage green accent for orientation only.
+
+## Design Direction Summary
+
+I retain the dark forest palette and flat surfaces because they match the
+brand personality: calm, grounded and intentional. Dark mode feels natural for
+the user and avoids the clinical look of some light palettes. Flat surfaces
+reduce visual noise, keeping attention on the content. No drop shadows or
+hero-banner were chosen to keep the layout low-brow and user-first.
 
 ## Accessibility & Inclusion
 
-- WCAG AA minimum
-- Respect prefers-reduced-motion
-- Ensure sufficient contrast on dark background
-- Keyboard navigable
+• WCAG AA minimum
+• Respect prefers-reduced-motion
+• Ensure sufficient contrast on dark background
+• Keyboard navigable
