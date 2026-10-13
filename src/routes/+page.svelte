@@ -87,14 +87,16 @@
 		display: flex;
 		flex-direction: column;
 		gap: 0.5rem;
+		counter-reset: card;
 	}
 
 	.link-card {
+		counter-increment: card;
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
-		gap: 1rem;
-		padding: 1rem 1.25rem;
+		gap: 1.25rem;
+		padding: 1.1rem 1.25rem;
 		border: 1px solid var(--color-border);
 		border-radius: 6px;
 		background: var(--color-surface);
@@ -115,8 +117,17 @@
 		outline-offset: 2px;
 	}
 
+	.link-card::before {
+		content: counter(card, decimal-leading-zero);
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		color: var(--color-dim);
+		flex-shrink: 0;
+	}
+
 	.link-card-body {
 		display: flex;
+		flex: 1;
 		flex-direction: column;
 		gap: 0.15rem;
 	}

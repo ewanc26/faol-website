@@ -74,10 +74,14 @@
 		display: inline-flex;
 		align-items: center;
 		gap: 0.3rem;
+		padding: 0.2rem 0;
 		font-size: 0.8rem;
 		color: var(--color-muted);
 		text-decoration: none;
-		transition: color 0.15s;
+		border-bottom: 1px solid transparent;
+		transition:
+			color 0.15s,
+			border-color 0.15s;
 	}
 
 	.nav-link:hover {
@@ -87,6 +91,7 @@
 
 	.nav-link.active {
 		color: var(--color-accent);
+		border-bottom-color: var(--color-accent);
 	}
 
 	@media (max-width: 640px) {
