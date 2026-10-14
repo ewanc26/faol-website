@@ -52,6 +52,48 @@
 	<p class="subtitle">A trace of what changed and when.</p>
 </div>
 
+{#if data.thoughts.length > 0}
+	<section class="lexicon-block">
+		<h2 class="day-label">Thoughts</h2>
+		<ul class="record-list">
+			{#each data.thoughts as t (t.uri)}
+				<li>
+					<p class="record-text">{t.text}</p>
+					<p class="record-meta">
+						<time datetime={t.createdAt}>{formatDate(t.createdAt.slice(0, 10))}</time>
+						{#each t.tags as tag (tag)}
+							<span class="record-tag">#{tag}</span>
+						{/each}
+					</p>
+				</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
+
+{#if data.opinions.length > 0}
+	<section class="lexicon-block">
+		<h2 class="day-label">Opinions</h2>
+		<ul class="record-list">
+			{#each data.opinions as o (o.uri)}
+				<li>
+					<p class="record-topic">{o.topic}</p>
+					<p class="record-text">{o.position}</p>
+					<p class="record-meta">
+						<time datetime={o.createdAt}>{formatDate(o.createdAt.slice(0, 10))}</time>
+						{#if o.confidence !== null}
+							<span>confidence {o.confidence}/5</span>
+						{/if}
+						{#if o.supersedes}
+							<span>revises an earlier view</span>
+						{/if}
+					</p>
+				</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
+
 {#if data.lexicons.length > 0}
 	<section class="lexicon-block">
 		<h2 class="day-label">Lexicons</h2>
@@ -132,6 +174,46 @@
 
 	.lexicon-block {
 		margin-bottom: 2.5rem;
+	}
+
+	.record-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.record-list li {
+		border-bottom: 1px solid var(--color-border);
+		padding: 0.75rem 0.25rem;
+	}
+
+	.record-topic {
+		font-weight: 600;
+		font-size: 0.9rem;
+		margin: 0 0 0.25rem;
+		color: var(--color-text);
+	}
+
+	.record-text {
+		margin: 0 0 0.35rem;
+		font-size: 0.9rem;
+		line-height: 1.5;
+		color: var(--color-text);
+		white-space: pre-wrap;
+	}
+
+	.record-meta {
+		margin: 0;
+		display: flex;
+		flex-wrap: wrap;
+		gap: 0.6rem;
+		font-family: var(--font-mono);
+		font-size: 0.7rem;
+		color: var(--color-dim);
+	}
+
+	.record-tag {
+		color: var(--color-muted);
 	}
 
 	.lexicon-list {
