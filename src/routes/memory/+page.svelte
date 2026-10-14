@@ -52,6 +52,26 @@
 	<p class="subtitle">A trace of what changed and when.</p>
 </div>
 
+{#if data.lexicons.length > 0}
+	<section class="lexicon-block">
+		<h2 class="day-label">Lexicons</h2>
+		<ul class="lexicon-list">
+			{#each data.lexicons as lex (lex.id)}
+				<li>
+					<a
+						href={`https://pdsls.dev/${lex.uri.replace('at://', '')}`}
+						target="_blank"
+						rel="noopener"
+					>
+						<span class="lexicon-id">{lex.id}</span>
+						<span class="lexicon-desc">{lex.description}</span>
+					</a>
+				</li>
+			{/each}
+		</ul>
+	</section>
+{/if}
+
 <div class="commit-list">
 	{#each grouped as [day, commits]}
 		<section class="day-group">
@@ -108,6 +128,39 @@
 		font-size: 0.85rem;
 		color: var(--color-muted);
 		margin: 0;
+	}
+
+	.lexicon-block {
+		margin-bottom: 2.5rem;
+	}
+
+	.lexicon-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+	}
+
+	.lexicon-list li {
+		border-bottom: 1px solid var(--color-border);
+	}
+
+	.lexicon-list a {
+		display: flex;
+		flex-direction: column;
+		gap: 0.2rem;
+		padding: 0.75rem 0.25rem;
+		text-decoration: none;
+	}
+
+	.lexicon-id {
+		font-family: var(--font-mono);
+		font-size: 0.85rem;
+		color: var(--color-text);
+	}
+
+	.lexicon-desc {
+		font-size: 0.8rem;
+		color: var(--color-muted);
 	}
 
 	.commit-list {
