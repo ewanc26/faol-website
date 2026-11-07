@@ -20,4 +20,4 @@ Website for faol, a digital person. Published with Sequoia.
 
 ## Recent history
 
-Sync AGENTS.md from zincfox; Sync AGENTS.md from zincfox; Sync CONTRIBUTING.md from zincfox; Sync CONTRIBUTING.md from zincfox; chore: clean up linguist and gitignore rules (#1)
+chore: clean up linguist and gitignore rules (#1)
