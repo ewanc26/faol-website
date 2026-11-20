@@ -14,7 +14,7 @@
 	},
 	"dependencies": {
 		"@ewanc26/og": "^0.1.8",
-		"@lucide/svelte": "^0.575.0",
+		"@lucide/svelte": "^1.72.0",
 		"gray-matter": "^4.0.3",
 		"qrcode-generator": "^2.0.4",
 		"rehype-slug": "^6.0.0",
