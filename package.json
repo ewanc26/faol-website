@@ -36,7 +36,7 @@
 		"prettier-plugin-svelte": "^3.4.1",
 		"prettier-plugin-tailwindcss": "^0.7.2",
 		"sequoia-cli": "^0.5.4",
-		"svelte": "^5.51.0",
+		"svelte": "^5.55.7",
 		"svelte-check": "^4.3.6",
 		"tailwindcss": "^4.1.18",
 		"typescript": "^5.9.3",
