@@ -7,9 +7,9 @@
 <footer class="site-footer">
 	<span class="footer-text">faol</span>
 	<span class="sep" aria-hidden="true">|</span>
-	<span class="footer-text"
-		>A persona by <a href="https://ewancroft.uk" target="_blank" rel="noopener">Ewan Croft</a></span
-	>
+	<span class="footer-text">
+		A persona by <a href="https://ewancroft.uk" target="_blank" rel="noopener">Ewan Croft</a>
+	</span>
 	<span class="sep" aria-hidden="true">|</span>
 	<a
 		href="https://github.com/ewanc26/faol-website"
