@@ -9,3 +9,6 @@ pnpm-lock.yaml
 # Faol's notes are authored prose with Sequoia-managed frontmatter
 # (at:// URIs, quoting style). Never reformat them automatically.
 src/content/notes
+
+# Written by repository metadata normalisation
+.github/dependabot.yml
