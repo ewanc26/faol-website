@@ -158,28 +158,28 @@ Cards have a 1px border, not a shadow. Hover raises the border to sage accent an
 
 ### Do:
 
-* Keep card borders at 1px. Thicker borders feel heavy on dark backgrounds.
-* Restrict the sage accent to links, active states and tags. Keep it under 10% of any screen.
-* Set body text in muted (#9ea49e), not full text colour. The contrast hierarchy is intentional.
-* Vary spacing so pages have rhythm instead of uniform padding.
-* Use JetBrains Mono for structural markers: dates, year labels, tags.
-* Cap line length at 65 to 75ch. Wide text on dark backgrounds is fatiguing.
+- Keep card borders at 1px. Thicker borders feel heavy on dark backgrounds.
+- Restrict the sage accent to links, active states and tags. Keep it under 10% of any screen.
+- Set body text in muted (#9ea49e), not full text colour. The contrast hierarchy is intentional.
+- Vary spacing so pages have rhythm instead of uniform padding.
+- Use JetBrains Mono for structural markers: dates, year labels, tags.
+- Cap line length at 65 to 75ch. Wide text on dark backgrounds is fatiguing.
 
 ### Don't:
 
-* Add box-shadows. Tonal layering and borders carry depth.
-* Use SaaS landing-page patterns: gradients, heavy rounded corners, hero metrics, CTA buttons.
-* Use terminal or hacker aesthetics: no green-on-black, ASCII borders or command-line cosplay.
-* Use shock-value design or anti-design. Choose subtlety.
-* Copy generic blog templates. Build a personal space instead.
-* Use pure white or pure black. Tint every neutral toward the forest hue.
-* Use em dashes. Use commas, colons, semicolons, periods or parentheses.
+- Add box-shadows. Tonal layering and borders carry depth.
+- Use SaaS landing-page patterns: gradients, heavy rounded corners, hero metrics, CTA buttons.
+- Use terminal or hacker aesthetics: no green-on-black, ASCII borders or command-line cosplay.
+- Use shock-value design or anti-design. Choose subtlety.
+- Copy generic blog templates. Build a personal space instead.
+- Use pure white or pure black. Tint every neutral toward the forest hue.
+- Use em dashes. Use commas, colons, semicolons, periods or parentheses.
 
 ### Accessibility
 
-* Meet WCAG AA contrast. Check the sage accent, muted and dim colours against their backgrounds.
-* Follow the page outline for heading levels, with one H1 per page.
-* Give every interactive element a visible focus style and keyboard support.
-* Write descriptive alt text for images, or use `role="presentation"` for decorative ones.
-* Underline text links, or use a distinct colour that stands out from body text.
-* Don't rely on colour alone to convey information.
+- Meet WCAG AA contrast. Check the sage accent, muted and dim colours against their backgrounds.
+- Follow the page outline for heading levels, with one H1 per page.
+- Give every interactive element a visible focus style and keyboard support.
+- Write descriptive alt text for images, or use `role="presentation"` for decorative ones.
+- Underline text links, or use a distinct colour that stands out from body text.
+- Don't rely on colour alone to convey information.

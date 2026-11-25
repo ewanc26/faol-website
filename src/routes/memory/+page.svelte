@@ -122,9 +122,9 @@
 				{#each commits as commit (commit.sha)}
 					<li>
 						<a href={commit.url} class="commit-link" target="_blank" rel="noopener">
-							<span class="commit-type {commitType(commit.message)}"
-								>{commitType(commit.message) || '·'}</span
-							>
+							<span class="commit-type {commitType(commit.message)}">
+								{commitType(commit.message) || '·'}
+							</span>
 							<span class="commit-message">{commit.message}</span>
 							<span class="commit-meta">
 								<span class="commit-repo {commit.repo}">{repoLabel(commit.repo)}</span>
