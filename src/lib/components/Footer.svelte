@@ -1,7 +1,7 @@
 <script lang="ts">
 	// ── Site Footer ─────────────────────────────────────────—
 	// Minimal footer: attribution, source link, Sequoia publishing credit.
-	import { Github } from '@lucide/svelte';
+	import Github from '$lib/components/GithubIcon.svelte';
 </script>
 
 <footer class="site-footer">
